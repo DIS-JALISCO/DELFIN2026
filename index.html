@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- HTML2PDF Library CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -80,14 +82,13 @@
                 <span><strong>Duración:</strong> 8 de junio al 24 de julio de 2026</span>
                 <span class="text-slate-600">|</span>
                 <span class="flex items-center text-cyan-400">
-                    <!-- Icono Map Pin -->
                     <svg class="w-4 h-4 mr-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                     Dr. Baeza Alzaga 107, Colonia Centro, Secretaría de Salud Jalisco
                 </span>
             </div>
             <div class="flex items-center space-x-2">
                 <span class="bg-emerald-500/15 text-emerald-400 px-2 py-0.5 rounded-md font-medium border border-emerald-500/20">
-                    Línea principal: Medicina Basada en la Evidencia
+                    Sede: Dr. Baeza Alzaga 107 • Guadalajara, Jalisco
                 </span>
             </div>
         </div>
@@ -107,7 +108,7 @@
 
                 <button onclick="switchTab('projects')" id="btn-tab-projects" class="nav-btn flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium transition-all w-full whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 border border-transparent">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>
-                    <span>Banco de 12 Proyectos</span>
+                    <span>Banco de 3 Proyectos</span>
                 </button>
 
                 <button onclick="switchTab('students')" id="btn-tab-students" class="nav-btn flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium transition-all w-full whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 border border-transparent">
@@ -124,7 +125,7 @@
 
             <!-- INFOCARD DE LA SEDE -->
             <div class="mt-8 bg-slate-950 rounded-2xl p-4 border border-slate-800 shadow-xl hidden lg:block">
-                <h3 class="text-xs font-bold text-slate-400 tracking-wider uppercase mb-3">Sede Administrativa</h3>
+                <h3 class="text-xs font-bold text-slate-400 tracking-wider uppercase mb-3">Sede de Trabajo</h3>
                 <div class="flex items-start space-x-3">
                     <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
@@ -133,12 +134,12 @@
                         <h4 class="text-sm font-semibold text-white leading-snug">Secretaría de Salud Jalisco</h4>
                         <p class="text-[11px] text-slate-400 mt-1">Dirección de Investigación y Calidad</p>
                         <div class="mt-2 inline-flex items-center bg-cyan-950 text-cyan-300 text-[10px] px-2 py-0.5 rounded border border-cyan-500/25">
-                            Dr. Baeza Alzaga 107
+                            Dr. Baeza Alzaga 107, Centro
                         </div>
                     </div>
                 </div>
                 <div class="mt-4 pt-3 border-t border-slate-800/50 text-[11px] text-slate-400">
-                    <p>Sesiones y seguimiento académico presencial bajo lineamientos del Verano Delfín.</p>
+                    <p>Actividades y seminarios presenciales regulados por el Plan de Trabajo del Programa Delfín.</p>
                 </div>
             </div>
         </aside>
@@ -150,16 +151,16 @@
             <div id="tab-dashboard" class="tab-content space-y-8">
                 <div class="border-b border-slate-800 pb-5">
                     <h2 class="text-2xl font-bold text-white tracking-tight">Bienvenido al Verano Científico Delfín 2026</h2>
-                    <p class="text-slate-400 mt-1">Ecosistema tecnológico de soluciones enfocadas a la mejora de la salud pública en Jalisco.</p>
+                    <p class="text-slate-400 mt-1">Portal institucional para el desarrollo de soluciones críticas de salud pública en el Estado de Jalisco.</p>
                 </div>
 
                 <!-- STAT CARDS -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div class="bg-slate-900 p-5 rounded-2xl border border-slate-800 relative overflow-hidden group hover:border-slate-700 transition-all">
                         <div class="absolute top-0 right-0 w-24 h-24 bg-cyan-500/5 rounded-full -mr-5 -mt-5"></div>
-                        <div class="text-slate-400 text-xs font-semibold uppercase tracking-wider">Proyectos de Innovación</div>
-                        <div class="text-3xl font-extrabold text-white mt-2">12</div>
-                        <p class="text-slate-500 text-xs mt-2">Diseños tecnológicos que resuelven problemas del sistema público de salud.</p>
+                        <div class="text-slate-400 text-xs font-semibold uppercase tracking-wider">Líneas de Innovación</div>
+                        <div class="text-3xl font-extrabold text-white mt-2">3</div>
+                        <p class="text-slate-500 text-xs mt-2">Proyectos enfocados en la divulgación, epidemiología y gobernanza de la investigación.</p>
                     </div>
 
                     <div class="bg-slate-900 p-5 rounded-2xl border border-slate-800 relative overflow-hidden group hover:border-slate-700 transition-all">
@@ -174,29 +175,29 @@
 
                     <div class="bg-slate-900 p-5 rounded-2xl border border-slate-800 relative overflow-hidden group hover:border-slate-700 transition-all">
                         <div class="absolute top-0 right-0 w-24 h-24 bg-purple-500/5 rounded-full -mr-5 -mt-5"></div>
-                        <div class="text-slate-400 text-xs font-semibold uppercase tracking-wider">Límite por Vacante</div>
+                        <div class="text-slate-400 text-xs font-semibold uppercase tracking-wider">Límite de Vacantes</div>
                         <div class="text-3xl font-extrabold text-white mt-2">3 Alumnos</div>
-                        <p class="text-slate-500 text-xs mt-2">Capacidad máxima permitida por cada proyecto para garantizar la calidad.</p>
+                        <p class="text-slate-500 text-xs mt-2">Capacidad máxima permitida por cada proyecto para asegurar mentoría personalizada.</p>
                     </div>
                 </div>
 
-                <!-- CRONOGRAMA INTERACTIVO -->
+                <!-- CRONOGRAMA INTERACTIVO (PLAN DE TRABAJO AVALADO) -->
                 <div class="bg-slate-900/40 p-6 rounded-2xl border border-slate-800">
                     <h3 class="text-lg font-bold text-white mb-6 flex items-center">
                         <span class="w-2.5 h-2.5 bg-cyan-500 rounded-full mr-2.5"></span>
-                        Ruta Crítica del Verano Científico (2026)
+                        Plan de Trabajo y Ruta Crítica (Ficha de Estudiante Delfín)
                     </h3>
 
                     <div class="relative pl-6 border-l-2 border-slate-800 space-y-8" id="milestones-container">
-                        <!-- Generado por JS -->
+                        <!-- Generado dinámicamente por JavaScript -->
                     </div>
                 </div>
 
                 <!-- PERFIL DE INGRESO DESEADO -->
                 <div class="bg-gradient-to-br from-slate-900 to-slate-950 p-6 rounded-2xl border border-slate-800/80">
-                    <h3 class="text-base font-bold text-white mb-2">Perfil de los Alumnos Integrantes</h3>
+                    <h3 class="text-base font-bold text-white mb-2">Perfil Académico del Estudiante</h3>
                     <p class="text-sm text-slate-400 leading-relaxed">
-                        Buscamos estudiantes con un alto interés en <strong class="text-slate-200">innovación en salud</strong>, proactivos y motivados para trabajar en equipos multidisciplinarios. Deben contar con una clara mentalidad de servicio público, sólidos principios éticos y un enfoque práctico orientado a la resolución de problemas críticos del sistema estatal de salud de Jalisco mediante el uso ético y avanzado de la tecnología.
+                        Se priorizan alumnos proactivos con bases en investigación en medicina y salud, manejo básico de datos estadísticos o aptitudes en divulgación de la ciencia. El plan de trabajo incluye la participación obligatoria en los seminarios semanales organizados por la asesoría y la entrega de productos de avance parcial.
                     </p>
                 </div>
             </div>
@@ -205,17 +206,17 @@
             <div id="tab-projects" class="tab-content space-y-6 hidden">
                 <div class="border-b border-slate-800 pb-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
                     <div>
-                        <h2 class="text-2xl font-bold text-white tracking-tight">Banco de 12 Proyectos de Tecnología y Salud</h2>
-                        <p class="text-slate-400 mt-1">Explora las soluciones diseñadas para Jalisco y selecciona tu enfoque de desarrollo.</p>
+                        <h2 class="text-2xl font-bold text-white tracking-tight">Proyectos de Estancia de Investigación 2026</h2>
+                        <p class="text-slate-400 mt-1">Selecciona la línea de investigación en la que enfocarás tu desarrollo científico de este verano.</p>
                     </div>
                     <button onclick="switchTab('students')" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs px-4 py-2.5 rounded-xl transition-all shadow-lg shadow-cyan-500/10 flex items-center gap-1 self-start">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>
-                        Registrarme en un Proyecto
+                        Elegir Proyecto e Inscribirme
                     </button>
                 </div>
 
                 <!-- GRID DE PROYECTOS -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="projects-grid">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="projects-grid">
                     <!-- Se renderiza dinámicamente con JS -->
                 </div>
             </div>
@@ -224,7 +225,7 @@
             <div id="tab-students" class="tab-content space-y-8 hidden">
                 <div class="border-b border-slate-800 pb-5">
                     <h2 class="text-2xl font-bold text-white tracking-tight">Registro de Alumnos y Asignación</h2>
-                    <p class="text-slate-400 mt-1">Registra nuevos alumnos (hasta un máximo de 3 por proyecto).</p>
+                    <p class="text-slate-400 mt-1">Inscríbete a un proyecto. Cada línea tiene un cupo estrictamente limitado a un máximo de 3 vacantes.</p>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -235,12 +236,12 @@
                         <form id="registration-form" onsubmit="registerStudent(event)" class="space-y-4 text-xs">
                             <div>
                                 <label class="block text-slate-400 mb-1.5 font-medium">Nombre Completo del Estudiante</label>
-                                <input type="text" id="reg-name" required placeholder="Ej. Juan Pérez González" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-slate-100 focus:outline-none focus:border-cyan-500">
+                                <input type="text" id="reg-name" required placeholder="Ej. Luis Ángel Acametitla Xancal" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-slate-100 focus:outline-none focus:border-cyan-500">
                             </div>
 
                             <div>
                                 <label class="block text-slate-400 mb-1.5 font-medium">Correo Electrónico Oficial</label>
-                                <input type="email" id="reg-email" required placeholder="Ej. juan.perez@alumnos.udg.mx" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-slate-100 focus:outline-none focus:border-cyan-500">
+                                <input type="email" id="reg-email" required placeholder="Ej. luis.angel@alumnos.buap.mx" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-slate-100 focus:outline-none focus:border-cyan-500">
                             </div>
 
                             <div class="grid grid-cols-2 gap-3">
@@ -262,7 +263,7 @@
 
                             <div>
                                 <label class="block text-slate-400 mb-1.5 font-medium">Institución de Procedencia</label>
-                                <input type="text" id="reg-institution" required value="Universidad de Guadalajara" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-slate-100 focus:outline-none focus:border-cyan-500">
+                                <input type="text" id="reg-institution" required placeholder="Ej. Benemérita Universidad Autónoma de Puebla" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-slate-100 focus:outline-none focus:border-cyan-500">
                             </div>
 
                             <div>
@@ -374,133 +375,180 @@
         </main>
     </div>
 
-    <!-- PIE DE PÁGINA -->
-    <footer class="bg-slate-950 border-t border-slate-800 py-6 mt-12 text-xs text-slate-500 text-center">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p>© 2026 Programa Interinstitucional para el Fortalecimiento de la Investigación y el Posgrado del Pacífico (Programa Delfín).</p>
-            <p class="mt-1 text-slate-600">
-                Coordinación General: Universidad Autónoma de Nayarit • Secretaría de Investigación y Posgrado. Tepic, Nayarit, México.
-            </p>
+    <!-- TEMPLATE COMPLETO PARA LA GENERACIÓN DEL PDF (MAQUETACIÓN ROBUSTA OFFSCREEN) -->
+    <div style="position: absolute; left: -9999px; top: 0;">
+        <div id="pdf-printable-template" style="width: 800px; height: 1040px; overflow: hidden; padding: 25px; background-color: #ffffff; color: #0f172a; font-family: 'Inter', sans-serif; box-sizing: border-box; position: relative;">
+            
+            <!-- Encabezado oficial -->
+            <div style="text-align: center; border-bottom: 2px solid #047857; padding-bottom: 8px; margin-bottom: 12px;">
+                <h1 style="font-size: 14px; font-weight: 800; color: #065f46; text-transform: uppercase; margin: 0; letter-spacing: 0.5px;">Programa Delfín (Verano Científico 2026)</h1>
+                <h2 style="font-size: 10px; font-weight: 600; color: #475569; margin: 2px 0 0 0;">31° Verano de la Investigación Científica y Tecnológica del Pacífico</h2>
+                <h3 style="font-size: 8px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 2px; margin: 4px 0 0 0;">Ficha Oficial de Plan de Trabajo de Estudiante</h3>
+            </div>
+
+            <!-- Datos Generales -->
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 12px; font-size: 10px; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px;">
+                <tr>
+                    <td style="padding: 8px; width: 50%; vertical-align: top; border-right: 1px solid #e2e8f0; line-height: 1.3;">
+                        <h4 style="font-size: 9px; font-weight: 700; color: #065f46; text-transform: uppercase; margin: 0 0 4px 0;">Información del Estudiante</h4>
+                        <p style="margin: 0 0 2px 0; color: #334155;"><strong>Nombre:</strong> <span id="pdf-stud-name" style="color: #0f172a;">-</span></p>
+                        <p style="margin: 0 0 2px 0; color: #334155;"><strong>Institución:</strong> <span id="pdf-stud-inst" style="color: #0f172a;">-</span></p>
+                        <p style="margin: 0 0 2px 0; color: #334155;"><strong>Carrera:</strong> <span id="pdf-stud-career" style="color: #0f172a;">-</span></p>
+                        <p style="margin: 0 0 2px 0; color: #334155;"><strong>Semestre:</strong> <span id="pdf-stud-semester" style="color: #0f172a;">-</span></p>
+                        <p style="margin: 0; color: #334155;"><strong>Correo:</strong> <span id="pdf-stud-email" style="color: #0f172a;">-</span></p>
+                    </td>
+                    <td style="padding: 8px; width: 50%; vertical-align: top; line-height: 1.3;">
+                        <h4 style="font-size: 9px; font-weight: 700; color: #065f46; text-transform: uppercase; margin: 0 0 4px 0;">Información del Asesor y Sede</h4>
+                        <p style="margin: 0 0 2px 0; color: #334155;"><strong>Investigador:</strong> Mtro. Netzahualpilli Delgado Figueroa</p>
+                        <p style="margin: 0 0 2px 0; color: #334155;"><strong>Sede:</strong> Secretaría de Salud Jalisco</p>
+                        <p style="margin: 0 0 2px 0; color: #334155;"><strong>Dirección:</strong> Dr. Baeza Alzaga 107, Colonia Centro</p>
+                        <p style="margin: 0 0 2px 0; color: #334155;"><strong>Ubicación:</strong> Guadalajara, Jalisco, México</p>
+                        <p style="margin: 0; color: #334155;"><strong>Modalidad:</strong> Presencial (Línea de Medicina Basada en Evidencia)</p>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Proyecto Seleccionado -->
+            <div style="background-color: #f0fdf4; border: 1px solid #bbf7d0; padding: 8px; border-radius: 6px; margin-bottom: 12px; font-size: 10px; line-height: 1.3;">
+                <h4 style="font-size: 9px; font-weight: 700; color: #047857; text-transform: uppercase; margin: 0 0 3px 0;">Proyecto de Investigación Asignado</h4>
+                <p style="margin: 0 0 3px 0; font-size: 11px; font-weight: 700; color: #0f172a;" id="pdf-proj-title">-</p>
+                <p style="margin: 0; color: #334155; height: 32px; overflow: hidden; text-overflow: ellipsis;" id="pdf-proj-problem"><strong>Planteamiento del problema:</strong> -</p>
+            </div>
+
+            <!-- Cronograma / Ruta Crítica Semanal -->
+            <div style="margin-bottom: 15px;">
+                <h4 style="font-size: 9px; font-weight: 700; color: #065f46; text-transform: uppercase; margin: 0 0 6px 0; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">Cronograma de Actividades (Ruta Crítica)</h4>
+                <table style="width: 100%; border-collapse: collapse; font-size: 8.5px; border: 1px solid #cbd5e1;">
+                    <thead>
+                        <tr style="background-color: #065f46; color: #ffffff; font-weight: 700; text-transform: uppercase; text-align: left;">
+                            <th style="padding: 5px; border: 1px solid #cbd5e1; width: 110px;">Semana / Fechas</th>
+                            <th style="padding: 5px; border: 1px solid #cbd5e1; width: 180px;">Fase o Hito</th>
+                            <th style="padding: 5px; border: 1px solid #cbd5e1;">Actividades Clínicas y Tecnológicas Detalladas</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pdf-table-body">
+                        <!-- Se poblará dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Firmas de Conformidad -->
+            <table style="width: 100%; margin-top: 25px; border-collapse: collapse; position: absolute; bottom: 45px; left: 25px; right: 25px;">
+                <tr>
+                    <td style="width: 50%; text-align: center; padding: 0 20px;">
+                        <div style="border-bottom: 1px solid #94a3b8; margin: 0 auto 6px auto; width: 75%; height: 40px;"></div>
+                        <p style="font-size: 10px; font-weight: 700; color: #0f172a; margin: 0;" id="pdf-sig-stud-name">-</p>
+                        <p style="font-size: 8px; color: #64748b; text-transform: uppercase; margin: 1px 0 0 0;">Firma del Estudiante</p>
+                    </td>
+                    <td style="width: 50%; text-align: center; padding: 0 20px;">
+                        <div style="border-bottom: 1px solid #94a3b8; margin: 0 auto 6px auto; width: 75%; height: 40px;"></div>
+                        <p style="font-size: 10px; font-weight: 700; color: #0f172a; margin: 0;">Mtro. Netzahualpilli Delgado Figueroa</p>
+                        <p style="font-size: 8px; color: #64748b; text-transform: uppercase; margin: 1px 0 0 0;">Firma del Asesor de Investigación</p>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Leyenda oficial del programa -->
+            <div style="text-align: center; font-size: 7.5px; color: #94a3b8; line-height: 1.3; position: absolute; bottom: 15px; left: 25px; right: 25px;">
+                <p style="margin: 0;">Ficha de Plan de Trabajo oficial emitida de acuerdo con la carta de presentación académica del 31° Verano Científico.</p>
+                <p style="margin: 1px 0 0 0; font-weight: 600; color: #047857;">Secretaría de Salud Jalisco • Coordinación del Programa Delfín 2026</p>
+            </div>
+
         </div>
-    </footer>
+    </div>
 
     <!-- LOGIC SCRIPT -->
     <script>
-        // --- BASE DE DATOS LOCALES ---
+        // --- BASE DE DATOS LOCALES DE 3 PROYECTOS SOLICITADOS ---
         const PROJECTS = [
             {
                 id: 1,
-                title: "App de pre-registro y bitácora de proyectos",
-                problem: "Evita 'proyectos fantasma', mejora la trazabilidad desde la idea original, el protocolo, hasta la entrega de resultados científicos.",
-                features: ["Alta interactiva de proyectos", "Gestión de versiones de protocolos", "Hitos clave del proyecto con semáforos de avance", "Carga estructurada de documentos de soporte y responsables", "Plus: Integración con ORCID para una fácil identificación de autores"],
-                tag: "Gestión de Datos",
-                metrica: "Reducción de proyectos sin seguimiento activo al 0%"
+                title: "Proyecto de mejora de la comunicación de la Ciencia para la Secretaria de Salud Jalisco",
+                problem: "La brecha en la traducción del conocimiento médico-científico a formatos accesibles y de alto impacto para la población del estado y la toma de decisiones clínicas.",
+                features: [
+                    "Diseño e implementación de un modelo de infocomunicación estructurada",
+                    "Desarrollo de plantillas adaptativas de síntesis de evidencia científica",
+                    "Estrategia de socialización y difusión de hallazgos en salud pública",
+                    "Plus: Incorporación de metodologías visuales y lenguaje ciudadano para divulgación"
+                ],
+                tag: "Comunicación de la Ciencia",
+                metrica: "% de documentos científicos traducidos a formatos ciudadanos de alta comprensión"
             },
             {
                 id: 2,
-                title: "Asistente de protocolos (STROBE/CONSORT/PRISMA)",
-                problem: "Protocolos incompletos, heterogéneos y con sesgos metodológicos de partida.",
-                features: ["Checklist dinámico adaptativo para reportes de investigación", "Plantillas específicas por diseño (Estudio transversal, cohorte, ensayo clínico, revisión sistemática)", "Exportador automático a formatos editables Word/PDF", "Validación interactiva de campos mínimos metodológicos"],
-                tag: "Metodología",
-                metrica: "% de protocolos con cumplimiento ≥80% desde la primera revisión"
+                title: "Epidemiologia del Cancer en el Estado de Jalisco",
+                problem: "Falta de unificación de datos y mapas de calor dinámicos sobre la incidencia, factores de riesgo y variables geodemográficas del cáncer a nivel estatal.",
+                features: [
+                    "Modelado epidemiológico retrospectivo de bases de datos del estado",
+                    "Estructuración de factores de riesgo asociados e indicadores clave",
+                    "Georreferenciación municipal piloto de casos de neoplasia en Jalisco",
+                    "Plus: Integración conceptual con descriptores y clasificaciones internacionales (CIE-10)"
+                ],
+                tag: "Epidemiología",
+                metrica: "Tasa de cobertura e integridad de bases epidemiológicas de cáncer analizadas"
             },
             {
                 id: 3,
-                title: "Plataforma de gestión ética y seguimiento CEI/CEISH",
-                problem: "Tiempos administrativos excesivamente largos, pérdida de versiones de documentos y correos dispersos.",
-                features: ["Bandeja de envío digital de protocolos para comités de ética", "Control estricto de versiones y enmiendas", "Módulo de observaciones estructuradas y respuestas en tiempo real", "Calendario automatizado de sesiones y firmas digitales", "Módulo integrado de declaración de conflictos de interés"],
-                tag: "Ética Médica",
-                metrica: "Tiempos de dictaminación reducidos a la mitad"
-            },
-            {
-                id: 4,
-                title: "App de reclutamiento y pre-screening (eConsent)",
-                problem: "El reclutamiento de pacientes y participantes es sumamente lento, ineficiente y con procesos engorrosos.",
-                features: ["Pre-screening interactivo mediante criterios de elegibilidad", "Agenda integrada para citas presenciales y virtuales", "Canales de difusión digitales amigables", "Módulo de Consentimiento Informado Electrónico (eConsent)", "Diseño 'Privacy-First' (mínima captura y separación de identificadores)"],
-                tag: "Interacción Paciente",
-                metrica: "Velocidad de reclutamiento aumentada en un 40%"
-            },
-            {
-                id: 5,
-                title: "Recolección móvil de datos en campo (Offline) para estudios epidemiológicos",
-                problem: "La captura de datos en papel genera un alto margen de errores críticos durante la posterior transcripción manual.",
-                features: ["Formularios dinámicos validados en tiempo real", "Georreferenciación opcional de brotes o casos", "Modo offline robusto con sincronización inteligente al detectar red", "Auditoría de cambios y tiempos de respuesta", "Inspirado en la tecnología Open Data Kit (ODK)"],
-                tag: "Epidemiología",
-                metrica: "Tasa de error en captura de datos < 1%"
-            },
-            {
-                id: 6,
-                title: "Mini-EDC para ensayos y cohortes (Electronic Data Capture)",
-                problem: "La alarmante práctica de utilizar 'Excel como base de datos' para estudios clínicos de alto impacto.",
-                features: ["Construcción de formularios de reporte de casos (CRFs)", "Reglas de validación cruzada y emisión de queries", "Auditoría completa e inalterable (Audit Trail)", "Exportación directa a CSV estructurado y compatibilidad estadística", "Interoperabilidad opcional con REDCap o alternativas OpenClinica"],
-                tag: "Ensayos Clínicos",
-                metrica: "Integridad de la base de datos certificable ante COFEPRIS"
-            },
-            {
-                id: 7,
-                title: "App de farmacovigilancia / eventos adversos en investigación",
-                problem: "Subreporte crítico de incidentes y tiempos excesivamente largos de notificación a comités reguladores.",
-                features: ["Captura interactiva guiada de eventos adversos", "Algoritmos sugeridos de severidad y causalidad", "Permite adjuntar evidencia fotográfica o clínica", "Notificación instantánea automatizada al coordinador y CEI", "Línea de tiempo del evento por paciente"],
-                tag: "Farmacovigilancia",
-                metrica: "Mediana del tiempo a reporte de eventos graves < 12 horas"
-            },
-            {
-                id: 8,
-                title: "Gestor digital de muestras y biobanco (Cadena de custodia)",
-                problem: "Extravíos recurrentes de muestras valiosas, inconsistencias en el almacenamiento y muestras sin trazabilidad o consentimiento.",
-                features: ["Generación e impresión de etiquetas con códigos QR únicos", "Ubicación espacial exacta tridimensional (Congelador/Caja/Estante)", "Trazabilidad de tiempos, temperaturas y ciclos de descongelación", "Asociación segura al consentimiento informado correspondiente", "Integración opcional con Sistemas de Laboratorio (LIMS)"],
-                tag: "Biobancos",
-                metrica: "Trazabilidad auditada del 100% de muestras clínicas"
-            },
-            {
-                id: 9,
-                title: "App de seguimiento de adherencia y PROs (Patient-Reported Outcomes)",
-                problem: "Altas tasas de pérdida de seguimiento en cohortes largas y falta de datos confiables en condiciones de vida real.",
-                features: ["Envío programado de micro-encuestas diarias de salud", "Recordatorios personalizados de tomas o dosis médicas", "Diarios digitales interactivos del paciente", "Alertas automáticas al equipo médico por umbrales de síntomas críticos", "Panel visual en tiempo real para el equipo clínico"],
-                tag: "Interacción Paciente",
-                metrica: "Aumento de la retención del paciente por encima del 90%"
-            },
-            {
-                id: 10,
-                title: "Vigilancia bibliográfica y alertas inteligentes de evidencia",
-                problem: "Llegar tarde a descubrimientos o publicaciones clave dentro de las líneas activas de investigación.",
-                features: ["Alertas inteligentes y personalizadas por términos de búsqueda o descriptores MeSH", "Algoritmo interno de deduplicación de fuentes", "Creación de carpetas o colecciones compartidas por proyecto", "Exportación fluida de referencias a gestores como Mendeley o Zotero", "Conexión directa a bases de datos de primer nivel (PubMed, Cochrane)"],
-                tag: "Metodología",
-                metrica: "Disminución del tiempo dedicado a revisiones semanales"
-            },
-            {
-                id: 11,
-                title: "Workflow para revisiones sistemáticas (Screening a Extracción)",
-                problem: "Caos masivo de archivos Excel duplicados, decisiones de selección inconsistentes y baja reproducibilidad científica.",
-                features: ["Screening ciego por par de revisores", "Flujo estructurado para la resolución amigable de discrepancias", "Módulo de extracción de datos de artículos seleccionados", "Evaluación estandarizada del riesgo de sesgo (Risk of Bias)", "Generación automática del Diagrama de Flujo PRISMA"],
-                tag: "Revisiones Sistemáticas",
-                metrica: "Reproducibilidad garantizada del proceso metodológico"
-            },
-            {
-                id: 12,
-                title: "Repositorio estatal de investigación + tablero público",
-                problem: "Desconocimiento general de qué se está investigando, duplicidad de esfuerzos e ineficiente coordinación estatal.",
-                features: ["Catálogo abierto, searchable y público de proyectos de salud en Jalisco", "Mapas interactivos de redes de colaboración y sedes", "Panel visual de indicadores de productividad científica", "Integración con plataformas como Zenodo (asignación automática de DOIs)", "Políticas claras de acceso abierto"],
-                tag: "Gestión de Datos",
-                metrica: "Indexación oportuna del 100% de la producción del verano"
+                title: "Proyecto de mejora del registro estatal de investigacion en el estado de Jalisco",
+                problem: "Dispersión, duplicidad e inconsistencia en los folios y protocolos de investigación que se ejecutan activamente en las diferentes unidades del estado.",
+                features: [
+                    "Modelado del nuevo flujo de registro y unificación de criterios",
+                    "Diseño de interfaz para auditorías del estatus de aprobación ética (CEISH)",
+                    "Mapeo de la productividad científica por institución de salud participante",
+                    "Plus: Interoperabilidad bajo protocolos y metadatos estándar MeSH/DeCS"
+                ],
+                tag: "Gobernanza de Datos",
+                metrica: "Tasa de digitalización y reducción de tiempos de dictamen/registro"
             }
         ];
 
+        // --- PLAN DE TRABAJO CON SEMINARIOS, WIKIPEDIA, WEBINAR Y PLAi REESTRUCTURADOS ---
         const MILESTONES = [
-            { week: "Semana 1", dates: "08 Jun - 12 Jun", title: "Inducción y Modelado de la Solución", desc: "Arranque formal presencial en la Secretaría de Salud. Conceptualización de bases de datos, requerimientos y lógica clínica." },
-            { week: "Semana 2", dates: "15 Jun - 19 Jun", title: "Diseño UX/UI y Reglas de Negocio", desc: "Elaboración de interfaces funcionales adaptadas a entornos reales de salud con diseño incluyente." },
-            { week: "Semana 3", dates: "22 Jun - 26 Jun", title: "Arquitectura y Primer Prototipo", desc: "Desarrollo del núcleo tecnológico inicial del proyecto y validación metodológica." },
-            { week: "Semana 4", dates: "29 Jun - 03 Jul", title: "Pruebas Piloto de Campo", desc: "Simulación de escenarios críticos, refinamiento de errores de experiencia de usuario y desempeño." },
-            { week: "Semana 5", dates: "06 Jul - 10 Jul", title: "Redacción y Estructuración Científica", desc: "Construcción formal del manuscrito (artículo científico) en base a la solución obtenida y su impacto." },
-            { week: "Semana 6", dates: "13 Jul - 17 Jul", title: "Consolidación de Entregables", desc: "Pruebas finales, pulido del repositorio de código, compilación de resultados y firmas de aval del Mtro. Netzahualpilli." },
-            { week: "Hito Final", dates: "20 Jul - 24 Jul", title: "Entrega de Memoria Digital y Clausura", desc: "Entrega del reporte formal, avales en el portal Delfín y preparación de ponencias para el Congreso de Agosto." }
+            { 
+                week: "Semana 1", 
+                dates: "08 Jun - 12 Jun", 
+                title: "Bienvenida y Definición del Marco de Trabajo", 
+                desc: "1. Bienvenida formal e inducción institucional en la SSJ.<br>2. Introducción y explicación de la línea de investigación clínica.<br>3. Búsqueda y recopilación inicial de información bibliográfica.<br>4. <span class='text-cyan-400 font-bold'>SEMINARIO CUCS:</span> Participación en el seminario de Introducción al Verano Delfín en el CUCS (Centro Universitario de Ciencias de la Salud, UdeG)." 
+            },
+            { 
+                week: "Semana 2", 
+                dates: "15 Jun - 19 Jun", 
+                title: "Estructuración Metodológica, Webinar Bioético y Buenas Prácticas", 
+                desc: "1. Formulación de la justificación científica del proyecto.<br>2. Búsqueda intensiva de información en bases de artículos indexados.<br>3. <span class='text-emerald-400 font-bold'>WEBINAR OBLIGATORIO:</span> Asistencia virtual a la sesión del <strong>martes 16 de junio a las 12:00 horas</strong> sobre <em>'Consentimiento informado, conflicto de interés y uso de datos sensibles'</em>, impartido por la <strong>Dra. Irene Córdova Jiménez</strong>.<br>4. <span class='text-amber-400 font-bold'>BUENAS PRÁCTICAS CLÍNICAS:</span> Certificación en <strong>'ICH Good Clinical Practice E6(R3)'</strong> a través de la plataforma del Global Health Training Centre (<a href='https://globalhealthtrainingcentre.tghn.org/ich-gcp-r3/' target='_blank' class='text-amber-400 underline hover:text-amber-300 font-medium'>Acceder al Curso GCP</a>) para blindar éticamente los proyectos." 
+            },
+            { 
+                week: "Semana 3", 
+                dates: "22 Jun - 26 Jun", 
+                title: "Diseño Metodológico y Sesión Cochrane", 
+                desc: "1. Elección y planeación del diseño metodológico del proyecto.<br>2. Búsqueda de información avanzada utilizando herramientas de bases de datos científicas.<br>3. <span class='text-cyan-400 font-bold'>COCHRANE IBEROAMÉRICA:</span> Asistencia al <strong>ECHO Webinario</strong> organizado por el Instituto Nacional de Salud (INS) | iECHO (<a href='https://iecho.org/public/program/PRGM17718652103129ZPL4KH9EL' target='_blank' class='text-cyan-400 underline hover:text-cyan-300 font-medium'>Acceder al iECHO</a>)." 
+            },
+            { 
+                week: "Semana 4", 
+                dates: "29 Jun - 03 Jul", 
+                title: "Gestión de Datos y Seminario de Revisión de Avances", 
+                desc: "1. Inicio de la gestión, depuración y estructuración de la base de datos de investigación.<br>2. Arranque del análisis estadístico de los resultados preliminares.<br>3. <span class='text-cyan-400 font-bold'>REVISIÓN DE AVANCES:</span> Sesión y seminario de revisión de los avances científicos acumulados con el tutor.<br>4. Búsqueda dirigida en literatura científica de soporte internacional." 
+            },
+            { 
+                week: "Semana 5", 
+                dates: "06 Jul - 10 Jul", 
+                title: "Procesamiento de Resultados, Sesión PLAi y Wikipedia", 
+                desc: "1. Edición y validación de figuras y tablas estadísticas basadas en los resultados obtenidos.<br>2. Análisis estructurado de variables y factores específicos.<br>3. <span class='text-emerald-400 font-bold'>SESIÓN MULTIMEDIA PLAi:</span> Planeación y producción de un <strong>Podcast o Video divulgativo</strong> del proyecto dentro de los recursos de la <strong>PLAi (Plataforma Abierta de Innovación)</strong>.<br>4. <span class='text-cyan-400 font-bold'>INTEGRACIÓN WIKIPEDIA:</span> Participación en el curso en línea gratuito para investigadores <strong>'Wikipedia for Researchers'</strong> (<a href='https://diff.wikimedia.org/2026/05/29/a-new-online-course-for-researchers-who-want-to-make-their-field-more-visible-on-wikipedia/' target='_blank' class='text-cyan-400 underline hover:text-cyan-300 font-medium'>Acceder al Curso en WikiLearn</a>)." 
+            },
+            { 
+                week: "Semana 6", 
+                dates: "13 Jul - 17 Jul", 
+                title: "Redacción del Manuscrito, Redacción Académica y Carteles Científicos", 
+                desc: "1. Comienzo con la estructuración y redacción científica de la Discusión y Conclusiones.<br>2. Participación en el Seminario de 'Microscopía'.<br>3. <span class='text-emerald-400 font-bold'>REDACCIÓN ACADÉMICA:</span> Asistencia al seminario de redacción académica de la <strong>Dirección de Investigación en Salud</strong>.<br>4. <span class='text-pink-400 font-bold'>CARTELES CIENTÍFICOS:</span> Capacitación interactiva para la elaboración y diseño de <strong>carteles científicos</strong> de alto impacto." 
+            },
+            { 
+                week: "Hito Final", 
+                dates: "20 Jul - 24 Jul", 
+                title: "Consolidación, Redacción Final y Aval", 
+                desc: "1. Preparación, redacción final y presentación del proyecto científico estructurado al asesor.<br>2. Obtención de aval y firma de desempeño por el Mtro. Netzahualpilli Delgado Figueroa en el portal institucional Delfín.<br>3. Preparación de resúmenes para la memoria digital y diseño de materiales del Congreso de Agosto." 
+            }
         ];
 
-        // --- ESTADO GLOBAL EN MEMORIA ---
-        let students = []; // Inicialmente vacío como solicitado
-        let currentTab = 'dashboard';
-
-        // --- MANEJO DE TOASTS ---
+        // --- MANEJO DE TOASTS (NOTIFICACIONES VISUALES) ---
         function showToast(message, type = 'success') {
             const container = document.getElementById('toast-container');
             const toast = document.createElement('div');
@@ -513,7 +561,7 @@
             `;
             container.appendChild(toast);
             
-            // Animation triggers
+            // Disparadores de animación
             setTimeout(() => {
                 toast.classList.remove('translate-y-2', 'opacity-0');
             }, 10);
@@ -524,21 +572,20 @@
             }, 4000);
         }
 
-        // --- CONTROL DE NAVEGACIÓN DE PESTAÑAS ---
+        // --- ESTADO GLOBAL EN MEMORIA ---
+        let students = []; // Inicialmente vacío como se solicitó
+        let currentTab = 'dashboard';
+
+        // --- GESTIÓN DE PESTAÑAS ---
         function switchTab(tabId) {
             currentTab = tabId;
-            
-            // Ocultar todos los contenidos de pestaña
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-            // Mostrar la seleccionada
             document.getElementById(`tab-${tabId}`).classList.remove('hidden');
 
-            // Quitar estilos activos de todos los botones
             document.querySelectorAll('.nav-btn').forEach(btn => {
                 btn.className = "nav-btn flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium transition-all w-full whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 border border-transparent";
             });
 
-            // Añadir estilos activos al seleccionado
             const activeBtn = document.getElementById(`btn-tab-${tabId}`);
             if (activeBtn) {
                 if (tabId === 'scientific') {
@@ -565,15 +612,15 @@
                             </span>
                             <span class="text-xs text-slate-500">${milestone.dates}</span>
                         </div>
-                        <span class="text-xs font-medium text-slate-400">SSJ - Centro</span>
+                        <span class="text-xs font-medium text-slate-400">SSJ - Guadalajara</span>
                     </div>
 
                     <h4 class="text-base font-bold text-slate-200 mt-2 group-hover:text-cyan-300 transition-colors">
                         ${milestone.title}
                     </h4>
-                    <p class="text-sm text-slate-400 mt-1 max-w-3xl leading-relaxed">
+                    <div class="text-sm text-slate-400 mt-2 max-w-3xl leading-relaxed space-y-1">
                         ${milestone.desc}
-                    </p>
+                    </div>
                 </div>
             `).join('');
         }
@@ -601,15 +648,15 @@
                                 </span>
                             </div>
 
-                            <h3 class="text-base font-bold text-white mb-2">
+                            <h3 class="text-base font-bold text-white mb-2 leading-snug">
                                 ${proj.id}) ${proj.title}
                             </h3>
-                            <p class="text-xs text-rose-300/90 mb-4 bg-rose-950/20 p-3 rounded-lg border border-rose-950/30">
+                            <p class="text-xs text-rose-300/90 mb-4 bg-rose-950/20 p-3 rounded-lg border border-rose-950/30 leading-relaxed">
                                 <strong class="text-rose-200">Qué resuelve:</strong> ${proj.problem}
                             </p>
 
                             <div class="mb-6">
-                                <h4 class="text-xs font-bold text-slate-400 mb-2 uppercase tracking-wide">Funciones Clave:</h4>
+                                <h4 class="text-xs font-bold text-slate-400 mb-2 uppercase tracking-wide">Actividades Clave del Estudiante:</h4>
                                 <ul class="space-y-1.5 text-xs text-slate-300">
                                     ${proj.features.map(feat => `
                                         <li class="flex items-start">
@@ -630,7 +677,7 @@
                             <button
                                 ${isFull ? 'disabled' : ''}
                                 onclick="selectProjectForRegistration(${proj.id})"
-                                class="text-xs font-bold px-3 py-1.5 rounded-lg text-center transition-all ${
+                                class="text-xs font-bold px-3 py-1.5 rounded-lg text-center transition-all whitespace-nowrap ${
                                     isFull
                                         ? 'bg-slate-800 text-slate-500 cursor-not-allowed'
                                         : 'bg-slate-800 hover:bg-cyan-500 hover:text-slate-950 text-slate-300'
@@ -661,10 +708,10 @@
 
             formSelect.innerHTML = optionsHTML;
 
-            // Para el asistente de artículo científico (todos son legibles para redactar)
+            // Todos son legibles para redactar en el Wizard
             wizardSelect.innerHTML = PROJECTS.map(p => `
                 <option value="${p.id}">
-                    Proyecto ${p.id}: ${p.title.substring(0, 50)}...
+                    Proyecto ${p.id}: ${p.title.substring(0, 45)}...
                 </option>
             `).join('');
         }
@@ -674,7 +721,8 @@
             switchTab('students');
         }
 
-        // --- REGISTRO DE NUEVO ESTUDIANTE ---
+        // --- STREAMING_CHUNK: Processing Student Registration and Initializing PDF compilation... ---
+        // --- REGISTRO DE NUEVO ESTUDIANTE Y GENERACIÓN DE PDF ---
         function registerStudent(e) {
             e.preventDefault();
             
@@ -685,7 +733,7 @@
             const institution = document.getElementById('reg-institution').value.trim();
             const projectId = parseInt(document.getElementById('reg-project').value, 10);
 
-            if (!name || !email) {
+            if (!name || !email || !institution) {
                 showToast("Por favor, completa todos los campos del formulario", "error");
                 return;
             }
@@ -718,6 +766,9 @@
             students.push(newStudent);
             showToast(`¡Registro exitoso! Alumno asignado al proyecto #${projectId}`);
             
+            // Invocar la generación automática del PDF Plan de Trabajo
+            triggerPlanDeTrabajoPDF(newStudent);
+
             // Resetear campos
             document.getElementById('reg-name').value = '';
             document.getElementById('reg-email').value = '';
@@ -726,6 +777,74 @@
             renderProjects();
             populateDropdowns();
             renderStudentsList();
+        }
+
+        // --- STREAMING_CHUNK: Compiling jsPDF parameters with Strict 1-Page Bounds... ---
+        // --- GENERACIÓN DEL PDF OFICIAL (MÉTODO OFFSCREEN ROBUSTO - EXACTAMENTE 1 PÁGINA) ---
+        function triggerPlanDeTrabajoPDF(student) {
+            const project = PROJECTS.find(p => p.id === student.projectId);
+            if (!project) return;
+
+            // Inyectar datos en el template de impresión permanente offscreen
+            document.getElementById('pdf-stud-name').innerText = student.name;
+            document.getElementById('pdf-stud-inst').innerText = student.institution;
+            document.getElementById('pdf-stud-career').innerText = student.career;
+            document.getElementById('pdf-stud-semester').innerText = student.semester;
+            document.getElementById('pdf-stud-email').innerText = student.email;
+            
+            document.getElementById('pdf-proj-title').innerText = `${project.id}) ${project.title}`;
+            document.getElementById('pdf-proj-problem').innerHTML = `<strong>Planteamiento del problema:</strong> ${project.problem}`;
+            document.getElementById('pdf-sig-stud-name').innerText = student.name;
+
+            // Renderizar la tabla de hitos sin estilos que hereden el modo oscuro
+            const tableBody = document.getElementById('pdf-table-body');
+            tableBody.innerHTML = MILESTONES.map((m, index) => {
+                const isEven = index % 2 === 0;
+                // Compactamos el texto de las actividades para el PDF de modo que nunca desborde
+                const compactDesc = m.desc
+                    .replace(/class='[^']*'/g, '')
+                    .replace(/font-bold/g, 'font-semibold')
+                    .replace(/<a[^>]*>.*?<\/a>/g, 'enlace oficial');
+
+                return `
+                    <tr style="background-color: ${isEven ? '#f8fafc' : '#ffffff'}; border: 1px solid #cbd5e1;">
+                        <td style="padding: 4px 6px; border: 1px solid #cbd5e1; font-weight: 700; color: #334155; line-height: 1.2;">
+                            ${m.week}<br>
+                            <span style="font-size: 7.5px; font-weight: 400; color: #64748b;">${m.dates}</span>
+                        </td>
+                        <td style="padding: 4px 6px; border: 1px solid #cbd5e1; font-weight: 700; color: #065f46; line-height: 1.2;">
+                            ${m.title}
+                        </td>
+                        <td style="padding: 4px 6px; border: 1px solid #cbd5e1; color: #334155; line-height: 1.25;">
+                            ${compactDesc}
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+
+            // Obtener elemento del PDF
+            const pdfContainer = document.getElementById('pdf-printable-template');
+
+            // Opciones del constructor html2pdf óptimas para salida exacta de 1 página (A4/Letter)
+            const opt = {
+                margin:       0, // Lienzo autocompactado
+                filename:     `Plan_Trabajo_Delfin_${student.name.replace(/\s+/g, '_')}.pdf`,
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2, useCORS: true, logging: false },
+                jsPDF:        { unit: 'px', hotfixes: ["px_scaling"], format: [800, 1040], orientation: 'portrait' }
+            };
+
+            showToast("Procesando Plan de Trabajo en formato PDF oficial (1 página)...", "success");
+
+            // Permitir un buffer de 150ms para que el navegador de dibujo dibuje los datos en el árbol DOM del offscreen
+            setTimeout(() => {
+                html2pdf().from(pdfContainer).set(opt).save().then(() => {
+                    showToast("¡PDF del Plan de Trabajo descargado con éxito!");
+                }).catch(err => {
+                    console.error("Error al generar el PDF: ", err);
+                    showToast("Error al exportar el plan en PDF, por favor intenta de nuevo.", "error");
+                });
+            }, 150);
         }
 
         // --- DAR DE BAJA ALUMNO ---
@@ -746,7 +865,7 @@
                 container.innerHTML = `
                     <div class="bg-slate-900/60 p-8 rounded-2xl border border-slate-800 text-center text-slate-400 text-sm">
                         <p class="font-semibold text-slate-300">No hay estudiantes registrados actualmente.</p>
-                        <p class="text-xs text-slate-500 mt-2">Usa el formulario lateral para añadir un alumno al programa.</p>
+                        <p class="text-xs text-slate-500 mt-2">Usa el formulario lateral para inscribirte y añadir un alumno al programa.</p>
                     </div>
                 `;
                 return;
@@ -755,7 +874,7 @@
             container.innerHTML = students.map((student) => {
                 const assignedProj = PROJECTS.find(p => p.id === student.projectId);
                 return `
-                    <div class="bg-slate-900/40 p-5 rounded-2xl border border-slate-800 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div class="bg-slate-900/40 p-5 rounded-2xl border border-slate-800 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 animate-fadeIn">
                         <div>
                             <div class="flex items-center space-x-2">
                                 <span class="w-2.5 h-2.5 bg-emerald-500 rounded-full"></span>
@@ -773,7 +892,14 @@
                             ` : ''}
                         </div>
 
-                        <div class="flex md:flex-col items-end justify-between w-full md:w-auto gap-2">
+                        <div class="flex md:flex-row items-center justify-between w-full md:w-auto gap-3">
+                            <button
+                                onclick='triggerPlanDeTrabajoPDF(${JSON.stringify(student)})'
+                                class="bg-emerald-950 hover:bg-emerald-900 border border-emerald-800/80 text-emerald-300 text-[11px] font-bold px-3 py-1.5 rounded-lg transition-all flex items-center gap-1.5"
+                            >
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                                Descargar PDF
+                            </button>
                             <span class="bg-emerald-500/10 text-emerald-400 text-[10px] px-2 py-0.5 rounded-md border border-emerald-500/20 uppercase font-bold tracking-wider">
                                 ${student.status}
                             </span>
@@ -789,16 +915,17 @@
             }).join('');
         }
 
+        // --- STREAMING_CHUNK: Setting up Scientific Article Helper Templates... ---
         // --- ASISTENTE CIENTÍFICO IMRYD (PLANTILLAS Y EXPORTACIÓN) ---
         function loadProjectTemplate(projId) {
             const proj = PROJECTS.find(p => p.id === parseInt(projId, 10));
             if (!proj) return;
 
-            const title = `Desarrollo de una solución tecnológica: "${proj.title}" para optimizar la gestión de la investigación clínica en Jalisco`;
-            const intro = `En la actualidad, el sistema de salud del Estado de Jalisco enfrenta el reto latente de: "${proj.problem.toLowerCase()}". Este estudio propone el diseño y pilotaje de la solución "${proj.title}", evaluando su viabilidad operativa, niveles de adopción y eficiencia metodológica dentro del Programa Interinstitucional Delfín en el contexto de la Secretaría de Salud Jalisco.`;
-            const methods = `Se llevará a cabo un estudio de desarrollo tecnológico y validación de usabilidad (diseño iterativo ágil). La plataforma se construyó con tecnologías web modernas utilizando un enfoque centrado en el usuario. Los criterios de inclusión para las pruebas piloto abarcan investigadores del campo de la salud. Las funciones implementadas incluyen: ${proj.features.join(", ")}.`;
-            const results = `El prototipo preliminar demostró una adopción favorable. Se proyecta que con el despliegue a escala se logre la siguiente métrica: "${proj.metrica}". Los usuarios de prueba calificaron la facilidad de uso como sobresaliente tras interactuar con la interfaz en las instalaciones de la Secretaría de Salud Jalisco.`;
-            const discussion = `La implementación de "${proj.title}" aborda un vacío crítico en la infraestructura digital de investigación del estado. Al compararlo con flujos de trabajo tradicionales en papel o Excel, se reduce significativamente la latencia administrativa y se eleva la rigurosidad ética y metodológica. Se discuten las limitantes de conexión inicial y las líneas futuras de integración con sistemas estatales.`;
+            const title = `Fortalecimiento y optimización estatal en salud: "${proj.title}" para el Estado de Jalisco`;
+            const intro = `El sistema de salud del Estado de Jalisco enfrenta retos complejos relacionados con: "${proj.problem.toLowerCase()}". Este estudio propone el diseño, evaluación e implementación estratégica de la solución titulada "${proj.title}", analizando su viabilidad metodológica, adopción por tomadores de decisiones y el impacto social directo dentro de las actividades oficiales del 31° Verano Delfín.`;
+            const methods = `Se llevará a cabo un estudio metodológico descriptivo y de desarrollo aplicado de campo. El proyecto se estructuró de manera presencial en la Secretaría de Salud Jalisco de acuerdo con la ruta crítica oficial, que incluyó la capacitación bioética en consentimiento informado por la Dra. Irene Córdova, la integración del conocimiento científico en Wikipedia con el programa WikiLearn, y la grabación de materiales de divulgación en formato Podcast/Video dentro de la Plataforma Abierta de Innovación (PLAi). Las fases e intervenciones principales incluyeron: ${proj.features.join(", ")}.`;
+            const results = `Se proyecta una mejora notable en los indicadores de salud pública correspondientes. Los resultados esperados se evaluarán mediante la métrica institucional: "${proj.metrica}", estimando un pilotaje efectivo en entornos reales de la Secretaría de Salud.`;
+            const discussion = `La implementación del "${proj.title}" atiende un vacío de gobernanza científica y de comunicación de la evidencia en el estado de Jalisco. Al compararse con flujos tradicionales de papel u organización dispersa, esta propuesta unifica criterios clínicos y de divulgación. Se analizan las limitaciones de la cobertura, factores de riesgo geográficos y se proponen planes de coasesoría para tesis de titulación futuras.`;
 
             document.getElementById('wizard-title').value = title;
             document.getElementById('wizard-intro').value = intro;
@@ -828,7 +955,7 @@
 ---
 
 ## RESUMEN / ABSTRACT
-Este artículo describe el diseño, la implementación y la validación preliminar de la propuesta "${proj ? proj.title : ''}". Desarrollada en el marco de la investigación tecnológica aplicada a la salud durante el 31° Verano Delfín.
+Este artículo científico describe detalladamente el diseño, la estructuración y los resultados del proyecto de investigación titulado "${proj ? proj.title : ''}". El estudio se consolida en el marco del 31° Verano de la Investigación Científica y Tecnológica del Pacífico (Programa Delfín).
 
 ## 1. INTRODUCCIÓN
 ${intro}
@@ -836,21 +963,21 @@ ${intro}
 ## 2. METODOLOGÍA
 ${methods}
 
-## 3. RESULTS
+## 3. RESULTADOS
 ${results}
 
 ## 4. DISCUSIÓN Y CONCLUSIÓN
 ${discussion}
 
 ## AGRADECIMIENTOS
-Agradecemos al Programa Interinstitucional para el Fortalecimiento de la Investigación y el Posgrado del Pacífico (Programa Delfín) y al Mtro. Netzahualpilli Delgado Figueroa por las facilidades brindadas en las oficinas de la Secretaría de Salud Jalisco.
+Agradecemos al Honorable Consejo Técnico del Programa Delfín y a la Coordinación General en la Universidad Autónoma de Nayarit, así como al Mtro. Netzahualpilli Delgado Figueroa y al personal de la Dirección de Investigación y Calidad de la Secretaría de Salud Jalisco por las facilidades presenciales de mentoría en la sede estatal.
 `;
 
             const blob = new Blob([markdownContent], { type: 'text/markdown;charset=utf-8;' });
             const url = URL.createObjectURL(blob);
             const link = document.createElement("a");
             link.setAttribute("href", url);
-            link.setAttribute("download", `Articulo_Cientifico_Proyecto_${projId}.md`);
+            link.setAttribute("download", `Borrador_Cientifico_Proyecto_${projId}.md`);
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
@@ -864,7 +991,7 @@ Agradecemos al Programa Interinstitucional para el Fortalecimiento de la Investi
             populateDropdowns();
             renderStudentsList();
             
-            // Cargar por defecto los campos IMRyD del proyecto #1
+            // Cargar por defecto los campos del proyecto #1
             loadProjectTemplate(1);
         };
     </script>
